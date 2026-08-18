@@ -27,7 +27,7 @@ def load_recipe_model():
 
     model = AutoModelForCausalLM.from_pretrained(
         RECIPE_MODEL,
-        torch_dtype=torch.float16 if device == "cuda" else torch.float32,
+        dtype=torch.float16 if device == "cuda" else torch.float32,
         device_map=device,
         low_cpu_mem_usage=True
     )
